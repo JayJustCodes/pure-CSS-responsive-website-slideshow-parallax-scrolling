@@ -1,0 +1,118 @@
+
+//** Mixins 
+
+//## Index
+//##  - Main containers size
+//##  - Media breakpoints
+//##  - Page border decorations 
+
+
+
+//main containers size 
+
+@mixin blocks-paddings {
+    padding: 0px 20px 0px 20px;
+}
+
+@mixin blocks-size-desktop {
+    @media (min-width: 1024px) {
+        max-width: 950px;
+        margin: 0 auto;}  
+}
+
+@mixin blocks-size-L-screen {
+    @media (min-width: 1440px) {
+        max-width: 68%;
+    }  
+}
+
+// media breakpoints
+
+@mixin for-mobiles-only-Hack {
+    @media (max-width: 639px) {@content;}
+}
+@mixin for-mobile-L {
+    @media (min-width: 425px) {@content;}  
+}
+@mixin for-tablet {
+    @media (min-width: 640px) {@content;} 
+}
+@mixin for-desktop {
+    @media (min-width: 1024px) {@content;}
+}
+@mixin for-L-screen {
+    @media (min-width: 1440px) {@content;}
+}
+@mixin for-4K {
+    @media (min-width: 2560px) {@content;}
+}
+
+@mixin for-hover-devices {
+    @media (hover: hover) {@content;}
+}
+
+//--------------------------------------------------------
+
+
+
+// border decoration 
+
+@mixin border-decoration-global {
+    content: "";
+    background-size: 150px;
+    background-repeat: no-repeat;
+
+    display: inline-block;
+    position: absolute;
+
+    width: 150px;
+    height: 160px;  
+
+    opacity: 0.5;
+
+    @include for-tablet {
+        background-size: 170px;
+
+        width: 170px;
+        height: 180px; 
+
+        opacity: 1;
+    }
+    @include for-desktop {
+        background-size: 200px;
+
+        width: 200px;
+        height: 210px; 
+    }
+}
+
+@mixin rightside-border-decoration_blue {
+    @include border-decoration-global;
+
+    background-image: url(../img/right-decor1.svg);
+    right: 0;
+}
+
+@mixin rightside-border-decoration_gold {
+    @include border-decoration-global;
+
+    background-image: url(../img/right-decor_gold.svg);
+    right: -35px;
+}
+
+
+@mixin leftside-border-decoration_gold {
+    @include border-decoration-global;
+
+    background-image: url(../img/left-decor2.png);
+    left: 0;
+}
+
+@mixin leftside-border-decoration_blue {
+    @include border-decoration-global;
+
+    background-image: url(../img/left-decor_blue2.png);
+    left: -5px;
+}
+
+

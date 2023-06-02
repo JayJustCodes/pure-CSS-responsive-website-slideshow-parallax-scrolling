@@ -1,0 +1,17 @@
+/*-------------------------------------------*\
+
+Global page color
+
+\*-------------------------------------------*/
+.page-color {
+  position: absolute;
+  z-index: -1;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(1.02deg, #4A99D3 -17.33%, rgba(74, 153, 211, 0) 75.91%), #FFFFFF;
+  opacity: 0.2;
+  box-shadow: 0px 4px 16px rgba(75, 0, 129, 0.26);
+  transform: rotate(-180deg);
+  top: 0;
+  left: 0;
+}

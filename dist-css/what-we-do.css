@@ -1,0 +1,605 @@
+/*-------------------------------------------*\
+
+Typography
+
+Index
+- Font faces
+- Titles, paragraphs styles
+
+\*-------------------------------------------*/
+/** 
+* fontfaces
+*/
+@font-face {
+  font-family: "Objective";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Objective-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Objective";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/Objective-Medium.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Objective";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/Objective-Bold.woff2") format("woff2");
+}
+/** 
+* titles
+*/
+h1 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 2.7rem;
+  }
+}
+@media (min-width: 1440px) {
+  h1 {
+    font-size: 3.1rem;
+    font-size: 3.5vw;
+  }
+}
+
+h2 {
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  font-size: 2.25rem;
+  font-size: 9vw;
+}
+@media (min-width: 640px) {
+  h2 {
+    font-size: 2.25rem;
+  }
+}
+@media (min-width: 1440px) {
+  h2 {
+    font-size: 3rem;
+    font-size: 2.5vw;
+  }
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 1.6rem;
+  font-size: 8.5vw;
+}
+@media (min-width: 640px) {
+  h3 {
+    font-size: 5vw;
+  }
+}
+@media (min-width: 1024px) {
+  h3 {
+    font-size: 1.6rem;
+  }
+}
+@media (min-width: 1440px) {
+  h3 {
+    font-size: 1.8vw;
+  }
+}
+
+h4 {
+  font-weight: 500;
+  font-size: 1.12rem;
+  line-height: 19px;
+}
+
+/** 
+* paragraphs
+*/
+.paragraph-text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25px;
+  color: #0F001A;
+  opacity: 0.5;
+}
+
+/*-------------------------------------------*\
+
+Keyframes
+
+Index
+- Icons animation for "what-we-do" block
+- Text autoscroll for "what-clints-say" slides
+- Text animation for "what-clints-say" slides
+- Text dropdown && dropup for footer menu
+- Icons autoscroll for footer
+
+\*-------------------------------------------*/
+/** 
+* icons animation for "what-we-do" block
+*/
+@keyframes icons-pulsate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes logo-sway {
+  0%, 100% {
+    transform: translateX(0%);
+    transform-origin: 50% 50%;
+  }
+  15% {
+    transform: translateX(-30px) rotate(-6deg);
+  }
+  30% {
+    transform: translateX(15px) rotate(6deg);
+  }
+  45% {
+    transform: translateX(-15px) rotate(-3.6deg);
+  }
+  60% {
+    transform: translateX(9px) rotate(2.4deg);
+  }
+  75% {
+    transform: translateX(-6px) rotate(-1.2deg);
+  }
+}
+/** 
+* text autoscroll for "what-clints-say" slides
+*/
+@keyframes one-time-autoscroller-checkbox1 {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-345%);
+  }
+}
+@keyframes infinite-autoscroller-checkbox1 {
+  0% {
+    transform: translateX(155%);
+  }
+  100% {
+    transform: translateX(-345%);
+  }
+}
+@keyframes one-time-autoscroller-checkbox2 {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-225%);
+  }
+}
+@keyframes infinite-autoscroller-checkbox2 {
+  0% {
+    transform: translateX(225%);
+  }
+  100% {
+    transform: translateX(-225%);
+  }
+}
+@keyframes one-time-autoscroller-checkbox3 {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes infinite-autoscroller-checkbox3 {
+  0% {
+    transform: translateX(335%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+/** 
+* text animation for "what-clints-say" slides
+*/
+@keyframes text-vertical-moving {
+  0%, 50% {
+    margin-top: -20%;
+  }
+  100% {
+    margin-top: 0%;
+  }
+}
+@keyframes text-vertical-moving-Desktop {
+  0%, 50% {
+    margin-top: -12%;
+  }
+  100% {
+    margin-top: 0%;
+  }
+}
+@keyframes text-grow {
+  0%, 50% {
+    font-size: 50px;
+    padding-top: 7%;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/** 
+* text dropdown && dropup for footer menu
+*/
+@keyframes dropdown {
+  100% {
+    margin-top: -15px;
+  }
+}
+@keyframes dropup {
+  0% {
+    margin-top: 0;
+  }
+  100% {
+    margin-top: -200%;
+  }
+}
+/** 
+* icons autoscroll for footer
+*/
+@keyframes infinite-icons-autoscroller {
+  0% {
+    transform: translateX(135px);
+  }
+  100% {
+    transform: translateX(-165px);
+  }
+}
+@keyframes infinite-icons-autoscroller2 {
+  0% {
+    transform: translateX(30px);
+  }
+  100% {
+    transform: translateX(-270px);
+  }
+}
+/*-------------------------------------------*\
+
+Images and text/autoscroll rules for checkboxes
+
+\*-------------------------------------------*/
+/* each checkbox, if checked =>  */
+/*to show image, move slider texts vertically && horizontally and grow client name,start autoscroll*/
+.checkbox-for-text1:checked ~ .slider__body .client-photo1 {
+  opacity: 1;
+}
+
+.checkbox-for-text1:checked ~ .slider__body .client-name1 {
+  animation: text-grow 1.5s;
+}
+
+.checkbox-for-text1:checked ~ .slider__body .slider__content-text1 {
+  animation: text-vertical-moving 1.5s;
+}
+@media (min-width: 1024px) {
+  .checkbox-for-text1:checked ~ .slider__body .slider__content-text1 {
+    animation: text-vertical-moving-Desktop 1.5s;
+  }
+}
+
+.checkbox-for-text1:checked ~ .slider__body .slider__content-text {
+  transition: transform 1s;
+  transform: translateX(0%);
+}
+
+.checkbox-for-text1:checked ~ .slider__body .css-text-wrapper1-autoscroll {
+  transform: translateX(0%);
+  animation: one-time-autoscroller-checkbox1 12s linear 1 3s;
+}
+
+.checkbox-for-text1:checked ~ .slider__body .css-text-wrapper2-autoscroll {
+  animation: infinite-autoscroller-checkbox1 12s linear infinite 15s;
+}
+
+.checkbox-for-text2:checked ~ .slider__body .client-photo2 {
+  opacity: 1;
+}
+
+.checkbox-for-text2:checked ~ .slider__body .client-name2 {
+  animation: text-grow 1.5s;
+}
+
+.checkbox-for-text2:checked ~ .slider__body .slider__content-text2 {
+  animation: text-vertical-moving 1.5s;
+}
+@media (min-width: 1024px) {
+  .checkbox-for-text2:checked ~ .slider__body .slider__content-text2 {
+    animation: text-vertical-moving-Desktop 1.5s;
+  }
+}
+
+.checkbox-for-text2:checked ~ .slider__body .slider__content-text {
+  transition: transform 1s;
+  transform: translateX(-35%);
+}
+
+.checkbox-for-text2:checked ~ .slider__body .css-text-wrapper1-autoscroll {
+  transform: translateX(0%);
+  animation: one-time-autoscroller-checkbox2 6s linear 1 3s;
+}
+
+.checkbox-for-text2:checked ~ .slider__body .css-text-wrapper2-autoscroll {
+  animation: infinite-autoscroller-checkbox2 12s linear infinite 9s;
+}
+
+.checkbox-for-text3:checked ~ .slider__body .client-photo3 {
+  opacity: 1;
+}
+
+.checkbox-for-text3:checked ~ .slider__body .client-name3 {
+  animation: text-grow 1.5s;
+}
+
+.checkbox-for-text3:checked ~ .slider__body .slider__content-text3 {
+  animation: text-vertical-moving 1.5s;
+}
+@media (min-width: 1024px) {
+  .checkbox-for-text3:checked ~ .slider__body .slider__content-text3 {
+    animation: text-vertical-moving-Desktop 1.5s;
+  }
+}
+
+.checkbox-for-text3:checked ~ .slider__body .slider__content-text {
+  transition: transform 1s;
+  transform: translateX(-71%);
+}
+
+.checkbox-for-text3:checked ~ .slider__body .css-text-wrapper1-autoscroll {
+  transform: translateX(0%);
+  animation: one-time-autoscroller-checkbox3 4s linear 1 3s;
+}
+
+.checkbox-for-text3:checked ~ .slider__body .css-text-wrapper2-autoscroll {
+  animation: infinite-autoscroller-checkbox3 12s linear infinite 7s;
+}
+
+/*-------------------------------------------*\
+
+"What-we-do" block
+
+Index
+- "what-we-do"
+- description-block
+- images, animations
+
+\*-------------------------------------------*/
+/** 
+* "what-we-do" block
+*/
+.what-we-do {
+  padding: 205px 0px 150px 0px;
+  position: relative;
+}
+.what-we-do__container {
+  padding: 0px 20px 0px 20px;
+}
+@media (min-width: 1024px) {
+  .what-we-do__container {
+    max-width: 950px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1440px) {
+  .what-we-do__container {
+    max-width: 68%;
+  }
+}
+.what-we-do__title {
+  line-height: 128%;
+  letter-spacing: 0.05em;
+}
+@media (min-width: 640px) {
+  .what-we-do__title {
+    position: absolute;
+    margin: 0;
+    width: 42%;
+  }
+}
+.what-we-do__content {
+  display: grid;
+  grid-template-columns: minmax(auto, 450px);
+  gap: 50px;
+  justify-content: center;
+}
+@media (min-width: 640px) {
+  .what-we-do__content {
+    position: relative;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: ". send" "receive send" "receive buy" ". buy";
+  }
+}
+@media (min-width: 1024px) {
+  .what-we-do__content {
+    grid-template-columns: minmax(380px, 35%) minmax(380px, 35%);
+    gap: 100px;
+  }
+}
+@media (min-width: 640px) {
+  .what-we-do__content-top {
+    grid-area: send;
+  }
+}
+@media (min-width: 640px) {
+  .what-we-do__content-middle {
+    grid-area: receive;
+  }
+}
+@media (min-width: 640px) {
+  .what-we-do__content-bottom {
+    grid-area: buy;
+  }
+}
+.what-we-do::after {
+  content: "";
+  background-size: 150px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  position: absolute;
+  width: 150px;
+  height: 160px;
+  opacity: 0.5;
+  background-image: url(../img/left-decor2.png);
+  left: 0;
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+}
+@media (min-width: 640px) {
+  .what-we-do::after {
+    background-size: 170px;
+    width: 170px;
+    height: 180px;
+    opacity: 1;
+  }
+}
+@media (min-width: 1024px) {
+  .what-we-do::after {
+    background-size: 200px;
+    width: 200px;
+    height: 210px;
+  }
+}
+
+/** 
+* description  block
+*/
+.description-block__container {
+  background: #FFFFFF;
+  box-shadow: 5px 20px 50px rgba(74, 153, 211, 0.2);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+}
+@media (min-width: 1024px) {
+  .description-block__container {
+    min-height: 425px;
+    padding: 48px;
+  }
+}
+.description-block__image {
+  display: flex;
+  position: relative;
+  padding-bottom: 56px;
+  width: 100%;
+}
+.description-block__info {
+  display: flex;
+  flex-direction: column;
+}
+.description-block__title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 150%;
+  letter-spacing: 0.02em;
+  color: #0F001A;
+  padding-bottom: 16px;
+}
+.description-block__text {
+  height: 103px;
+}
+.description-block__link {
+  margin-top: 70px;
+}
+.description-block__link-arrow {
+  display: block;
+  width: 8%;
+  transition: transform 0.3s ease 0s;
+}
+@media (min-width: 1024px) {
+  .description-block__link-arrow {
+    width: 16px;
+  }
+}
+.description-block__hypertext {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  color: #4A99D3;
+  text-decoration: none;
+  transition: color 0.3s ease 0s;
+  font-weight: 500;
+  font-size: 4.5vw;
+  line-height: 30px;
+}
+@media (min-width: 640px) {
+  .description-block__hypertext {
+    font-size: 3vw;
+  }
+}
+@media (min-width: 1024px) {
+  .description-block__hypertext {
+    font-size: 14px;
+  }
+}
+@media (hover: hover) {
+  .description-block__hypertext:hover {
+    color: #2c4150;
+  }
+  .description-block__hypertext:hover .description-block__link-arrow {
+    transform: scale(1.1);
+  }
+}
+
+/** 
+* images, animations
+*/
+.we-send {
+  margin-top: -75px;
+}
+.we-send__logo {
+  margin: 0 auto;
+  width: 75%;
+}
+.we-send__icons {
+  position: absolute;
+  width: 24%;
+  animation: icons-pulsate 1s ease-in-out infinite both;
+}
+.we-send__icon1 {
+  top: 40%;
+  left: 9%;
+}
+.we-send__icon2 {
+  left: 24%;
+}
+.we-send__icon3 {
+  right: 18%;
+}
+.we-send__icon4 {
+  right: 6%;
+  top: 40%;
+}
+
+.we-receive__logo {
+  width: 70%;
+}
+
+.we-buy__logo {
+  margin: 0 auto;
+  width: 59%;
+}
+
+.what-we-do__content-top:hover .we-send__icons {
+  animation-play-state: paused;
+}
+
+.what-we-do__content-middle:hover .we-receive__logo,
+.what-we-do__content-middle:focus-within .we-receive__logo,
+.what-we-do__content-bottom:hover .we-buy__logo,
+.what-we-do__content-bottom:focus-within .we-buy__logo {
+  animation: logo-sway 0.8s both;
+}

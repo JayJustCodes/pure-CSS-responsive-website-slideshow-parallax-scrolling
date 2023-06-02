@@ -1,0 +1,45 @@
+@use '../../commons';
+/*-------------------------------------------*\
+
+Main content area 
+
+\*-------------------------------------------*/
+
+//## Сontains blocks
+@forward 'best-for-you/best-for-you';
+@forward 'what-we-do/what-we-do';
+@forward 'how-it-works/how-it-works';
+@forward 'what-clients-say/what-clients-say';
+@forward 'enjoy-more/enjoy-more';
+
+//## Used for "best-for-you" and "enjoy-more" blocks
+@forward 'inviting-to-download/inviting-to-download';
+
+//##  Buttons 
+@forward 'buttons/buttons';
+
+/** 
+* "Main" block
+*/
+
+.main {
+    flex: 1 1 auto;
+    margin: 0;
+}
+
+.main-containers-sizing {
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+@media (max-width: 767.98px) {
+   
+    .main-containers-sizing {
+        max-width: 950px;
+        margin: 0 auto;
+        padding: 0 25px 0 25px;
+    }
+}
+
+
+

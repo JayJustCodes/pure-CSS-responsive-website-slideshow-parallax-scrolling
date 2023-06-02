@@ -1,0 +1,238 @@
+@use '../../../commons';
+
+/*-------------------------------------------*\
+
+"What-we-do" block
+
+Index
+- "what-we-do"
+- description-block
+- images, animations
+
+\*-------------------------------------------*/
+$we-send-logo-width: 75%;
+$we-send-icons-width: 24%;
+$we-receive-logo-width: 70%;
+$we-buy-logo-width: 59%;
+
+/** 
+* "what-we-do" block
+*/
+
+.what-we-do {
+    padding: 205px 0px 150px 0px;   
+    position: relative;
+
+    &__container {
+        @include commons.blocks-paddings;
+        @include commons.blocks-size-desktop;
+        @include commons.blocks-size-L-screen;
+    }
+
+
+    &__title { 
+        line-height: 128% ;
+        letter-spacing: 0.05em;
+
+        @include commons.for-tablet {
+            position: absolute;
+            margin: 0;
+            width: 42%;
+        }
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: minmax(auto, 450px);
+        gap: 50px;
+        justify-content: center;
+
+
+        @include commons.for-tablet {
+            position: relative;
+
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: 
+            ". send"
+            "receive send"
+            "receive buy"
+            ". buy";
+        }
+        
+        @include commons.for-desktop {
+            grid-template-columns: minmax(380px, 35%) minmax(380px, 35%);
+            gap: 100px;
+        }
+
+
+        &-top {
+
+            @include commons.for-tablet {
+                grid-area: send;
+            }
+        }
+        &-middle {
+
+            @include commons.for-tablet {
+                grid-area: receive;
+            } 
+        }
+        &-bottom {
+
+            @include commons.for-tablet {
+                grid-area: buy;
+            }
+        }   
+    }
+
+
+    &::after {
+        @include commons.leftside-border-decoration_gold;
+
+        position: absolute;
+        z-index: -1;
+        bottom: 0;
+    }
+}
+
+/** 
+* description  block
+*/
+
+.description-block {
+
+    &__container {
+        background: #FFFFFF;
+        box-shadow: 5px 20px 50px rgba(74, 153, 211, 0.2);
+        border-radius: 10px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 25px;
+
+        @include commons.for-desktop {
+            min-height: 425px;
+            padding: 48px;
+        }
+    }
+
+    //------------------------
+    &__image {
+        display: flex;
+        position: relative;
+        padding-bottom: 56px;
+        width: 100%;
+    }
+
+    //-----------------------
+    &__info {
+        display: flex;
+        flex-direction: column;  
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 150%;
+        letter-spacing: 0.02em;
+        color: commons.$title-color-dark;
+        padding-bottom: 16px;
+    }
+    &__text {
+        height: 103px;
+    }
+
+    &__link {
+        margin-top: 70px;
+
+        &-arrow {
+            display: block;
+            width: 8%;
+
+            transition: transform 0.3s ease 0s;
+
+            @include commons.for-desktop {
+                width: 16px;
+            }
+        }
+    }
+    &__hypertext {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+
+        color: #4A99D3;
+        text-decoration: none;
+        transition: color 0.3s ease 0s;
+
+        font-weight: 500;
+        font-size: 4.5vw;
+        line-height: 30px;
+
+        @include commons.for-tablet {
+            font-size: 3vw;
+        }
+        @include commons.for-desktop {
+            font-size: 14px;
+        }
+
+        @include commons.for-hover-devices {
+            &:hover {
+                color: #2c4150;
+    
+                .description-block__link-arrow {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}
+
+/** 
+* images, animations
+*/
+
+.we-send {
+  
+    margin-top: -75px;
+
+
+    &__logo {
+        margin: 0 auto;
+        width: $we-send-logo-width;
+    }
+    &__icons {
+        position: absolute;
+        width: $we-send-icons-width;
+
+        animation: icons-pulsate 1s ease-in-out infinite both;
+    }
+
+    &__icon1 {top: 40%; left: 9%;}
+    &__icon2 {left: 24%;}
+    &__icon3 {right: 18%;}
+    &__icon4 {right: 6%; top: 40%;} 
+}
+
+.we-receive__logo {
+    width: $we-receive-logo-width;
+}
+
+.we-buy__logo {
+    margin: 0 auto;
+    width: $we-buy-logo-width;
+}
+
+// animations pulsating icons + moving logos
+
+.what-we-do__content-top:hover .we-send__icons {
+	animation-play-state: paused;
+}
+
+.what-we-do__content-middle:hover .we-receive__logo,
+.what-we-do__content-middle:focus-within .we-receive__logo, 
+.what-we-do__content-bottom:hover .we-buy__logo,
+.what-we-do__content-bottom:focus-within .we-buy__logo {
+    animation: logo-sway 0.8s both;
+}

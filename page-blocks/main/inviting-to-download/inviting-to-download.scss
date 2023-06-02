@@ -1,0 +1,46 @@
+@use '../../../commons';
+
+/** 
+* "inviting-to-download" block
+* used for "best-for-you" and "enjoy-more" content blocks
+*/
+
+$buttons-color: commons.$base-color-light;
+$buttons-on-hover: commons.$color-on-hover;
+
+
+.inviting-to-download {
+
+    display: flex;
+    flex-direction: column;
+
+    &__title {
+        &:not(:last-child) {
+            margin-bottom: 14px;
+        }
+    }
+    &__text {
+        font-weight: 400;
+
+        &:not(:last-child) {
+            margin-bottom: 60px;
+        }
+    }
+
+    &__buttons-container {
+        display: flex;
+    }
+    &__buttons {
+        background-color: $buttons-color;
+
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+
+        @include commons.for-hover-devices {
+            &:hover {
+                background-color: $buttons-on-hover;
+            }  
+        } 
+    }
+}

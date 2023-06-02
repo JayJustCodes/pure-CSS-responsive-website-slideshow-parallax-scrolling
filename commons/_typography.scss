@@ -1,0 +1,106 @@
+@use 'mixins';
+
+/*-------------------------------------------*\
+
+Typography
+
+Index
+- Font faces
+- Titles, paragraphs styles
+
+\*-------------------------------------------*/
+
+
+/** 
+* fontfaces
+*/
+
+@font-face {
+    font-family: 'Objective';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/Objective-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Objective';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/Objective-Medium.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Objective';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/Objective-Bold.woff2') format('woff2');
+}
+
+/** 
+* titles
+*/
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+
+
+  @include mixins.for-desktop {
+      font-size: 2.7rem;
+  }
+  @include mixins.for-L-screen {
+      font-size: 3.1rem; //fallback
+      font-size: 3.5vw;  
+  }
+}
+
+h2 {
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  font-size: 2.25rem; //fallback
+  font-size: 9vw;
+
+  @include mixins.for-tablet {
+    font-size: 2.25rem;
+  }
+  @include mixins.for-L-screen {
+    font-size: 3rem; //fallback
+    font-size: 2.5vw;
+  }
+}
+
+h3 {
+  font-weight: 700;
+  // line-height: 27px;
+  font-size: 1.6rem; //fallback
+  font-size: 8.5vw;
+
+  @include mixins.for-tablet {
+    font-size: 5vw;
+  }
+  @include mixins.for-desktop {
+    font-size: 1.6rem;
+  }
+  @include mixins.for-L-screen {
+    font-size: 1.8vw;
+}
+}
+
+h4 {
+  font-weight: 500;
+  font-size: 1.12rem;
+  line-height: 19px;
+}
+
+/** 
+* paragraphs
+*/
+
+.paragraph-text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25px;
+  color: #0F001A;
+  opacity: 0.5;
+}

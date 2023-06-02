@@ -1,0 +1,98 @@
+@use '../../../commons';
+
+/*-------------------------------------------*\
+
+"how-it-works" block
+
+\*-------------------------------------------*/
+
+$image-width-mobile: 30%;
+$image-width-desktop: auto;
+$image-width-L-screen: 20%;
+
+//-----------------
+.how-it-works {
+
+    z-index: 2;
+    width: 100%;
+    background: #f0f4fc;     // initial background: rgba(74, 153, 211, 0.1);
+
+    &__container {
+        @include commons.blocks-paddings;
+        @include commons.blocks-size-desktop;
+        @include commons.blocks-size-L-screen;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 431px;
+        padding-bottom: 45px;
+    }
+
+    &__title {
+        text-align: center;
+        padding-bottom: 90px;
+
+        &_light-blue {
+            color: commons.$base-color-light;
+        }
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 100px;
+
+        @include commons.for-tablet {
+            flex-direction: row;
+            gap: 25px;
+        }
+    }
+    
+
+    &__description-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &-image {
+            transition: transform 1s ease 0s;
+            width: $image-width-mobile;
+
+            @include commons.for-desktop {
+                width: $image-width-desktop;
+            }
+
+            @include commons.for-L-screen {
+                width: $image-width-L-screen;
+            }
+
+            img {
+                width: 100%;
+            }
+
+
+        }
+        &:hover .how-it-works__description-block-image{
+            transform: scale(1.1);
+        }
+        &-title {
+            color: commons.$title-color-dark;
+
+            @include commons.for-L-screen {
+                font-size: 1.25vw;
+            }
+
+        }
+        &-text {
+            text-align: center;
+            margin-top: -10px;
+            line-height: 26px;
+
+            @include commons.for-L-screen {
+                font-size: 1.11vw;
+                line-height: 162%;
+            }
+        }
+    }
+}

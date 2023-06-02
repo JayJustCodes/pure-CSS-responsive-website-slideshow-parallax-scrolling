@@ -1,0 +1,416 @@
+@use '../../../commons';
+
+/*-------------------------------------------*\
+
+"What-clients-say" block
+
+Index
+- "What-clients-say"
+- Slider
+- Arrows
+
+\*-------------------------------------------*/
+
+@use 'local-variables';  // autoscroll-delay, autoscroll-speed, images-width
+
+/** 
+* "What-clients-say" 
+*/
+
+.what-clients-say {
+
+    &__container {
+        @include commons.blocks-paddings;
+        @include commons.blocks-size-desktop;  
+        // @include commons.blocks-size-L-screen;   
+
+        @include commons.for-desktop {
+            background-color: #FFFFFF;
+        }
+    }
+
+    &__title {
+        text-align: center;
+    }
+}
+
+/** 
+* slider
+*/
+
+.default-checkboxes {
+    display: none;
+}
+
+.slider {
+    position: relative;
+
+    @include commons.for-L-screen {
+        transform: scale(1.1);
+        z-index: 2;
+    }
+    @include commons.for-4K {
+        transform: scale(1.3);
+    }
+
+    &__body {
+        display: grid;
+        grid-template-columns: 1fr; 
+        justify-content: center; 
+        justify-items: center;
+
+        @include commons.for-desktop {
+            grid-template-columns: 1fr 1fr;
+            justify-items: unset;
+            align-items: center;
+        }
+    }
+    //slider body => images  + content --------------
+
+    &__image {
+        position: relative;
+
+        display: grid;
+        align-items: end;
+
+        width: local-variables.$images-width;
+        height: 100%;
+
+        @include commons.for-desktop {
+            width: local-variables.$images-width-Desktop;
+        }
+        @include commons.for-L-screen {
+            margin-left: -20%;
+        }
+
+        &-photos {
+            grid-column: 1;
+            grid-row: 1;
+
+            opacity: 0; //to hide if not checked 
+            transition: opacity 500ms; 
+
+            width: 100%; 
+
+            z-index: 2;
+        }
+        // background
+        &::after {
+            content: "";
+            position: absolute;
+            width: 100vw;
+            height: 76%;
+            background: #f0f4fc;
+            border-radius: 0px 6px 6px 0px;
+            top: 24%;
+            // z-index: -1;  
+            z-index: 1;  
+
+            right: -10%;
+            @include commons.for-L-screen {
+                right: -25%;
+            }
+        }
+    }
+
+    &__content {
+        position: relative;
+        overflow: hidden;   
+
+        padding-top: 10px;
+        height: 220px; 
+        min-width: 265px;
+
+        // z-index: 1;
+        z-index: 3;
+
+        // background-color: #FFFFFF;
+
+        @include commons.for-tablet {
+            transform: scale(1.8);
+        }
+        @include commons.for-desktop {
+            transform: none;
+
+            margin-top: 30%;
+            padding-left: 5px;
+
+            // max-width: 472px;
+        }
+
+        &-text {
+            position: absolute; 
+            display: flex;
+            gap: 61px;
+
+            top: 0;
+
+            @include commons.for-desktop {
+                top: auto;
+                gap: 100px;
+            }
+        }
+
+        &-paragraphs {
+            width: 275px;
+
+            @include commons.for-desktop {
+                width: 418px;
+            }
+
+            p {
+                line-height: 20px;
+                
+                @include commons.for-desktop {
+                    line-height: 25px;
+                }
+            }
+           
+            h4 {
+                line-height: normal;
+            }
+        }
+    }
+    &__inverted-quote-icon { 
+        position: absolute;
+        transform: rotate(-180deg);
+        right: 0;
+        opacity: 0.2;
+
+        @include commons.for-desktop {
+            position: unset;
+            transform: none;
+            opacity: 1;
+        }
+    }
+
+    // slider arrows --------------------------------------
+
+    &__arrows {
+        position: absolute;
+        display: flex;
+        border-radius: 4px;
+
+        width: 100%;
+        height: 80px;
+
+        right: 0;
+        bottom: 226px; 
+        
+        background: rgba(255, 255, 255, 0.6);
+        transform: scale(1.1);
+
+        z-index: 2;
+
+        @include commons.for-tablet {
+            background: rgba(255, 255, 255, 0.8);
+        }
+        @include commons.for-desktop {
+            width: 160px;
+            bottom: -3%;
+
+            background: #FFFFFF;
+            transform: none;
+        
+            box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
+        }
+    }
+}
+
+
+// -------------------------------------------------------------------------------
+
+/** 
+* arrows creating
+*/
+
+[for="checkbox-text1"],
+[for="checkbox-text2"],
+[for="checkbox-text3"] {
+    &::after, 
+    &::before {
+        display: block;
+        position: absolute;
+        cursor: pointer;
+        width: 80px;
+        height: 80px;
+    }
+
+//--  if hovered or active 
+
+    //HACK ! NEED TO STYLES OVERRIGHTING ON HOVER AND ACTIVE
+    &:hover::after {  /*'!important' used */
+        background: url(../img/what-clients-say/arrow-right-white.svg) no-repeat center #4A99D3!important;
+        transition: background 0.3s, transform 0.5s;
+        
+    }
+    &:hover::before { /*'!important' used */
+        background: url(../img/what-clients-say/arrow-left-white.svg) no-repeat center #4A99D3!important;
+        transition: background 0.3s, transform 0.5s;
+    }
+    
+    &:active::after {
+        transform: scale(0.9); /*'!important' used*/
+        background-position-x: right!important
+    }
+    &:active::before {
+        transform: scale(0.9); /*'!important' used*/
+        background-position-x: left!important
+    }
+}
+
+
+//--  default style
+
+.checkbox-for-text1:checked ~ .slider__arrows [for="checkbox-text3"],
+.checkbox-for-text2:checked ~ .slider__arrows [for="checkbox-text1"],
+.checkbox-for-text3:checked ~ .slider__arrows [for="checkbox-text2"] {
+    &::before {
+        left: 0;
+        content: "";
+        background: url(../img/what-clients-say/arrow-left-blue.svg) no-repeat center;
+    }
+}
+
+.checkbox-for-text1:checked ~ .slider__arrows [for="checkbox-text2"],
+.checkbox-for-text2:checked ~ .slider__arrows [for="checkbox-text3"],
+.checkbox-for-text3:checked ~ .slider__arrows [for="checkbox-text1"] {
+    &::after {
+        right: 0;
+        content: "";
+        background: url(../img/what-clients-say/arrow-right-blue.svg) no-repeat center;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// -------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+// .checkbox-for-text1:checked ~ .slider__body .client-photo1,
+// .checkbox-for-text2:checked ~ .slider__body .client-photo2,
+// .checkbox-for-text3:checked ~ .slider__body .client-photo3 {
+//     opacity: 1;
+// }
+
+
+// @mixin image-if-checkedbox($checkedbox-img) {
+//     .checkbox-for-text#{$checkedbox-img}:checked ~ .slider__body .client-photo#{$checkedbox-img} {
+//         opacity: 1;
+//     }
+// }
+
+// @include image-if-checkedbox(1);
+// @include image-if-checkedbox(2);
+// @include image-if-checkedbox(3);
+
+// @mixin image-text-ifchecked($number){
+//     .checkbox-for-text#{$number}:checked ~ .slider__body .client-photo#{$number} {
+//         opacity: 1;
+//     }
+
+//     .checkbox-for-text#{$number}:checked ~ .slider__body .slider__content-text#{$number}{
+//         animation: text-vertical-moving 1.5s;
+    
+//         @include commons.for-desktop {
+//             animation: text-vertical-moving-Desktop 1.5s;
+//         }
+//     }
+//     .checkbox-for-text#{$number}:checked ~ .slider__body .client-name#{$number} {
+//         animation: text-grow 1.5s;
+//     }
+// }
+
+
+
+
+
+// /*****TEXT HORIZONTAL MOVING********************/
+// .checkbox-for-text1:checked ~ .slider__body .slider__content-text {
+//     transition: transform 1s;
+// }
+// .checkbox-for-text2:checked ~ .slider__body .slider__content-text {
+//     transform: translateX(-35%);
+//     transition: transform 1s;
+// }
+// .checkbox-for-text3:checked ~ .slider__body .slider__content-text  {
+//     transform: translateX(-71%);   
+//     transition: transform 1s;
+// }
+
+// /*****TEXT VERTICAL MOVING ********************/
+// .checkbox-for-text1:checked ~ .slider__body .slider__content-text1,
+// .checkbox-for-text2:checked ~ .slider__body .slider__content-text2,
+// .checkbox-for-text3:checked ~ .slider__body .slider__content-text3 {
+//     animation: text-vertical-moving 1.5s;
+
+//     @include commons.for-desktop {
+//         animation: text-vertical-moving-Desktop 1.5s;
+//     }
+// }
+
+// /*****TEXT GROWING ********************/
+// .checkbox-for-text1:checked ~ .slider__body .client-name1,
+// .checkbox-for-text2:checked ~ .slider__body .client-name2,
+// .checkbox-for-text3:checked ~ .slider__body .client-name3 {
+//     animation: text-grow 1.5s;
+// }
+
+// @mixin text-translateX-checkbox($checkedbox) {
+//     .checkbox-for-text#{$checkedbox}:checked ~ .slider__body .slider__content-text {
+//         transition: transform 1s;
+
+//         @if $checkedbox == 1 {
+//             transform: translateX(0%);
+//         } @else if $checkedbox == 2 {
+//             transform: translateX(-35%);
+//         } @else if $checkedbox == 3 {
+//             transform: translateX(-71%);
+//         } @else {
+//         @error "Unknown checkbox#{$checkedbox}.";
+//         }
+//     }
+// }
+// @include text-translateX-checkbox(1);
+// @include text-translateX-checkbox(2);
+// @include text-translateX-checkbox(3);
+
+// -------------------------------------------------------------------------------
+
+
+
+
+

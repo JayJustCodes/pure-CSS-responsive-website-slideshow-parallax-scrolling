@@ -1,0 +1,516 @@
+/*-------------------------------------------*\
+
+Typography
+
+Index
+- Font faces
+- Titles, paragraphs styles
+
+\*-------------------------------------------*/
+/** 
+* fontfaces
+*/
+@font-face {
+  font-family: "Objective";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Objective-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Objective";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/Objective-Medium.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Objective";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/Objective-Bold.woff2") format("woff2");
+}
+/** 
+* titles
+*/
+h1 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 2.7rem;
+  }
+}
+@media (min-width: 1440px) {
+  h1 {
+    font-size: 3.1rem;
+    font-size: 3.5vw;
+  }
+}
+
+h2 {
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  font-size: 2.25rem;
+  font-size: 9vw;
+}
+@media (min-width: 640px) {
+  h2 {
+    font-size: 2.25rem;
+  }
+}
+@media (min-width: 1440px) {
+  h2 {
+    font-size: 3rem;
+    font-size: 2.5vw;
+  }
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 1.6rem;
+  font-size: 8.5vw;
+}
+@media (min-width: 640px) {
+  h3 {
+    font-size: 5vw;
+  }
+}
+@media (min-width: 1024px) {
+  h3 {
+    font-size: 1.6rem;
+  }
+}
+@media (min-width: 1440px) {
+  h3 {
+    font-size: 1.8vw;
+  }
+}
+
+h4 {
+  font-weight: 500;
+  font-size: 1.12rem;
+  line-height: 19px;
+}
+
+/** 
+* paragraphs
+*/
+.paragraph-text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25px;
+  color: #0F001A;
+  opacity: 0.5;
+}
+
+/*-------------------------------------------*\
+
+Keyframes
+
+Index
+- Icons animation for "what-we-do" block
+- Text autoscroll for "what-clints-say" slides
+- Text animation for "what-clints-say" slides
+- Text dropdown && dropup for footer menu
+- Icons autoscroll for footer
+
+\*-------------------------------------------*/
+/** 
+* icons animation for "what-we-do" block
+*/
+@keyframes icons-pulsate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes logo-sway {
+  0%, 100% {
+    transform: translateX(0%);
+    transform-origin: 50% 50%;
+  }
+  15% {
+    transform: translateX(-30px) rotate(-6deg);
+  }
+  30% {
+    transform: translateX(15px) rotate(6deg);
+  }
+  45% {
+    transform: translateX(-15px) rotate(-3.6deg);
+  }
+  60% {
+    transform: translateX(9px) rotate(2.4deg);
+  }
+  75% {
+    transform: translateX(-6px) rotate(-1.2deg);
+  }
+}
+/** 
+* text autoscroll for "what-clints-say" slides
+*/
+@keyframes one-time-autoscroller-checkbox1 {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-345%);
+  }
+}
+@keyframes infinite-autoscroller-checkbox1 {
+  0% {
+    transform: translateX(155%);
+  }
+  100% {
+    transform: translateX(-345%);
+  }
+}
+@keyframes one-time-autoscroller-checkbox2 {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-225%);
+  }
+}
+@keyframes infinite-autoscroller-checkbox2 {
+  0% {
+    transform: translateX(225%);
+  }
+  100% {
+    transform: translateX(-225%);
+  }
+}
+@keyframes one-time-autoscroller-checkbox3 {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes infinite-autoscroller-checkbox3 {
+  0% {
+    transform: translateX(335%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+/** 
+* text animation for "what-clints-say" slides
+*/
+@keyframes text-vertical-moving {
+  0%, 50% {
+    margin-top: -20%;
+  }
+  100% {
+    margin-top: 0%;
+  }
+}
+@keyframes text-vertical-moving-Desktop {
+  0%, 50% {
+    margin-top: -12%;
+  }
+  100% {
+    margin-top: 0%;
+  }
+}
+@keyframes text-grow {
+  0%, 50% {
+    font-size: 50px;
+    padding-top: 7%;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/** 
+* text dropdown && dropup for footer menu
+*/
+@keyframes dropdown {
+  100% {
+    margin-top: -15px;
+  }
+}
+@keyframes dropup {
+  0% {
+    margin-top: 0;
+  }
+  100% {
+    margin-top: -200%;
+  }
+}
+/** 
+* icons autoscroll for footer
+*/
+@keyframes infinite-icons-autoscroller {
+  0% {
+    transform: translateX(135px);
+  }
+  100% {
+    transform: translateX(-165px);
+  }
+}
+@keyframes infinite-icons-autoscroller2 {
+  0% {
+    transform: translateX(30px);
+  }
+  100% {
+    transform: translateX(-270px);
+  }
+}
+/*-------------------------------------------*\
+
+Images and text/autoscroll rules for checkboxes
+
+\*-------------------------------------------*/
+/* each checkbox, if checked =>  */
+/*to show image, move slider texts vertically && horizontally and grow client name,start autoscroll*/
+.checkbox-for-text1:checked ~ .slider__body .client-photo1 {
+  opacity: 1;
+}
+
+.checkbox-for-text1:checked ~ .slider__body .client-name1 {
+  animation: text-grow 1.5s;
+}
+
+.checkbox-for-text1:checked ~ .slider__body .slider__content-text1 {
+  animation: text-vertical-moving 1.5s;
+}
+@media (min-width: 1024px) {
+  .checkbox-for-text1:checked ~ .slider__body .slider__content-text1 {
+    animation: text-vertical-moving-Desktop 1.5s;
+  }
+}
+
+.checkbox-for-text1:checked ~ .slider__body .slider__content-text {
+  transition: transform 1s;
+  transform: translateX(0%);
+}
+
+.checkbox-for-text1:checked ~ .slider__body .css-text-wrapper1-autoscroll {
+  transform: translateX(0%);
+  animation: one-time-autoscroller-checkbox1 12s linear 1 3s;
+}
+
+.checkbox-for-text1:checked ~ .slider__body .css-text-wrapper2-autoscroll {
+  animation: infinite-autoscroller-checkbox1 12s linear infinite 15s;
+}
+
+.checkbox-for-text2:checked ~ .slider__body .client-photo2 {
+  opacity: 1;
+}
+
+.checkbox-for-text2:checked ~ .slider__body .client-name2 {
+  animation: text-grow 1.5s;
+}
+
+.checkbox-for-text2:checked ~ .slider__body .slider__content-text2 {
+  animation: text-vertical-moving 1.5s;
+}
+@media (min-width: 1024px) {
+  .checkbox-for-text2:checked ~ .slider__body .slider__content-text2 {
+    animation: text-vertical-moving-Desktop 1.5s;
+  }
+}
+
+.checkbox-for-text2:checked ~ .slider__body .slider__content-text {
+  transition: transform 1s;
+  transform: translateX(-35%);
+}
+
+.checkbox-for-text2:checked ~ .slider__body .css-text-wrapper1-autoscroll {
+  transform: translateX(0%);
+  animation: one-time-autoscroller-checkbox2 6s linear 1 3s;
+}
+
+.checkbox-for-text2:checked ~ .slider__body .css-text-wrapper2-autoscroll {
+  animation: infinite-autoscroller-checkbox2 12s linear infinite 9s;
+}
+
+.checkbox-for-text3:checked ~ .slider__body .client-photo3 {
+  opacity: 1;
+}
+
+.checkbox-for-text3:checked ~ .slider__body .client-name3 {
+  animation: text-grow 1.5s;
+}
+
+.checkbox-for-text3:checked ~ .slider__body .slider__content-text3 {
+  animation: text-vertical-moving 1.5s;
+}
+@media (min-width: 1024px) {
+  .checkbox-for-text3:checked ~ .slider__body .slider__content-text3 {
+    animation: text-vertical-moving-Desktop 1.5s;
+  }
+}
+
+.checkbox-for-text3:checked ~ .slider__body .slider__content-text {
+  transition: transform 1s;
+  transform: translateX(-71%);
+}
+
+.checkbox-for-text3:checked ~ .slider__body .css-text-wrapper1-autoscroll {
+  transform: translateX(0%);
+  animation: one-time-autoscroller-checkbox3 4s linear 1 3s;
+}
+
+.checkbox-for-text3:checked ~ .slider__body .css-text-wrapper2-autoscroll {
+  animation: infinite-autoscroller-checkbox3 12s linear infinite 7s;
+}
+
+/*-------------------------------------------*\
+
+Header
+
+Index
+- Header
+- Menu
+- Burger
+\*-------------------------------------------*/
+.header {
+  width: 100%;
+}
+.header__container {
+  min-height: 121px;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 20px 0px 20px;
+}
+@media (min-width: 1024px) {
+  .header__container {
+    max-width: 950px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1440px) {
+  .header__container {
+    max-width: 68%;
+  }
+}
+@media (min-width: 640px) {
+  .header__container {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+.header__logo {
+  width: 125px;
+}
+.header__logo img {
+  width: 100%;
+}
+@media (max-width: 639px) {
+  .header__logo {
+    margin-top: 35px;
+  }
+}
+.header__menu {
+  flex: 1 1 auto;
+}
+.header__burger-icon {
+  position: absolute;
+  right: 5%;
+  position: absolute;
+  top: 40px;
+}
+
+@media (min-width: 640px) {
+  .menu {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+@media (min-width: 640px) {
+  .menu__body {
+    padding-right: 5%;
+  }
+}
+@media (max-width: 639px) {
+  .menu__body {
+    margin-top: -200%;
+    transition: margin-top 0.5s ease 0s;
+  }
+}
+.menu__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  padding: 0;
+  list-style: none;
+  font-size: 2.5rem;
+}
+@media (min-width: 640px) {
+  .menu__list {
+    flex-direction: row;
+    font-size: 1.7rem;
+  }
+}
+@media (min-width: 1024px) {
+  .menu__list {
+    font-size: 1.3rem;
+  }
+}
+.menu__link {
+  text-decoration: none;
+  color: #260041;
+  transition: color 0.3s ease 0s;
+}
+@media (hover: hover) {
+  .menu__link:hover {
+    color: #4A99D3;
+  }
+}
+
+.burger-checkbox {
+  display: none;
+}
+
+.burger {
+  display: inline-block;
+  border: 0;
+  background: none;
+  outline: 0;
+  padding: 0;
+  border-bottom: 4px solid #4A99D3;
+  width: 28px;
+  transition: border-bottom 1s ease-in-out;
+  cursor: pointer;
+}
+@media (min-width: 640px) {
+  .burger {
+    display: none;
+  }
+}
+.burger:before, .burger:after {
+  content: "";
+  display: block;
+  border-bottom: 4px solid #4A99D3;
+  width: 100%;
+  margin-bottom: 5px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.burger-checkbox:checked ~ .burger {
+  border-bottom: 4px solid transparent;
+  transition: border-bottom 0.8s ease-in-out;
+}
+.burger-checkbox:checked ~ .burger:before {
+  transform: rotate(-405deg) translateY(1px) translateX(-3px);
+  transition: transform 0.5s ease-in-out;
+}
+.burger-checkbox:checked ~ .burger:after {
+  transform: rotate(405deg) translateY(-4px) translateX(-5px);
+  transition: transform 0.5s ease-in-out;
+}
+
+.burger-checkbox:checked ~ .menu .menu__body {
+  margin-top: 0;
+}

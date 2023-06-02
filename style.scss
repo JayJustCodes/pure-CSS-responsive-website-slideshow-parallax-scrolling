@@ -1,0 +1,40 @@
+//** Main stylesheet
+
+//## Common components: typography, variables, mixins, keyframes, functions
+@use 'commons'; 
+
+//## Header, Main, Footer, Page color, Background decoration (parallax)
+@forward 'page-blocks';
+
+
+/*-------------------------------------------*\
+
+Global page content
+
+\*-------------------------------------------*/
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: 'Objective';
+    font-size: 16px; 
+    font-weight: 400;
+    color: commons.$base-text-color;
+    margin: 0;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+
+

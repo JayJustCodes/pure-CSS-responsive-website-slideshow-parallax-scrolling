@@ -1,0 +1,30 @@
+.wrapper-for-page-background-parallax {
+  height: 100vh;
+  overflow-y: auto;
+  perspective: 1px;
+  transform-style: preserve-3d;
+}
+
+.page-background-parallax {
+  width: 100%;
+  transform: translateZ(-1px) scale(2);
+  z-index: -2;
+}
+.page-background-parallax_top {
+  margin-top: -85%;
+}
+.page-background-parallax_top img {
+  margin-left: 93%;
+}
+.page-background-parallax_middle {
+  margin-top: 70%;
+}
+.page-background-parallax_middle img {
+  margin-left: 93%;
+}
+.page-background-parallax_bottom {
+  margin-top: -60%;
+}
+.page-background-parallax_bottom img {
+  margin-left: -5%;
+}

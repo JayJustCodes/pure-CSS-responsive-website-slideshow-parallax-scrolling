@@ -1,0 +1,79 @@
+@use 'mixins';
+@use '../page-blocks/main/what-clients-say/local-variables';
+
+/*-------------------------------------------*\
+
+Images and text/autoscroll rules for checkboxes
+
+\*-------------------------------------------*/
+
+$first-autoscroll-duration: null; // !! declared as !global inside the @for !!
+
+
+//--------------------------------------------------------------------------------------------
+/* each checkbox, if checked =>  */
+/*to show image, move slider texts vertically && horizontally and grow client name,start autoscroll*/
+
+@for $checked-box from 1 through 3 {
+
+    //----- to show image, grow client name and move text vertically
+    @each $class-to-set in client-photo, client-name, slider__content-text {
+
+        //will compile like => .checkbox-for-text1:checked ~ .slider__body .slider__content-text1 
+        .checkbox-for-text#{$checked-box}:checked ~ .slider__body .#{$class-to-set}#{$checked-box} {
+
+            @if $class-to-set == client-photo {
+                opacity: 1;
+            } 
+            @if $class-to-set == client-name {
+                animation: text-grow 1.5s;
+            } 
+            @if $class-to-set == slider__content-text {
+                animation: text-vertical-moving 1.5s;
+
+                @include mixins.for-desktop {
+                    animation: text-vertical-moving-Desktop 1.5s;
+                }
+            }
+        }
+    }
+
+    //----- to move text horizontally
+    .checkbox-for-text#{$checked-box}:checked ~ .slider__body .slider__content-text {
+        transition: transform 1s;
+
+        @if $checked-box == 2 {
+            transform: translateX(-35%);
+        }   @else if $checked-box == 3 {
+            transform: translateX(-71%);
+        }   @else {
+            transform: translateX(0%);
+        }
+    }
+
+
+    //-----step 1 => one time autoscroll
+    //-----step 2 => infinite autoscroll
+
+
+    //to apply a different autoscroll's speed fo each checkbox, related to the text position
+    $first-autoscroll-duration : calc(local-variables.$autoscroll-speed  / $checked-box) !global; 
+
+    @each $text-wrapper in text-wrapper1, text-wrapper2 {
+
+        //will compile like => .checkbox-for-text1:checked ~ .slider__body .css-text-wrapper1-autoscroll
+        .checkbox-for-text#{$checked-box}:checked ~ .slider__body .css-#{$text-wrapper}-autoscroll {
+           
+            //top apply one time autoscroll for text wrapper 1
+            @if $text-wrapper == text-wrapper1 {
+                transform: translateX(0%);
+                animation: one-time-autoscroller-checkbox#{$checked-box} $first-autoscroll-duration linear 1 local-variables.$autoscroll-delay;
+            } 
+            //top apply infinite autoscroll for text wrapper 2
+            @if $text-wrapper == text-wrapper2 {
+                animation: infinite-autoscroller-checkbox#{$checked-box} local-variables.$autoscroll-speed linear infinite calc($first-autoscroll-duration + local-variables.$autoscroll-delay);
+            }
+        }
+    }
+} 
+

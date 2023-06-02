@@ -1,0 +1,177 @@
+/*-------------------------------------------*\
+
+Keyframes
+
+Index
+- Icons animation for "what-we-do" block
+- Text autoscroll for "what-clints-say" slides
+- Text animation for "what-clints-say" slides
+- Text dropdown && dropup for footer menu
+- Icons autoscroll for footer
+
+\*-------------------------------------------*/
+
+/** 
+* icons animation for "what-we-do" block
+*/
+
+@keyframes icons-pulsate {
+    0% {
+        transform: scale(1);
+    }
+    50% { 
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes logo-sway {
+    0%, 100% {
+        transform: translateX(0%);
+        transform-origin: 50% 50%;
+    }
+    15% {
+        transform: translateX(-30px) rotate(-6deg);
+    }
+    30% {
+        transform: translateX(15px) rotate(6deg);
+    }
+    45% {
+        transform: translateX(-15px) rotate(-3.6deg);
+    }
+    60% {
+        transform: translateX(9px) rotate(2.4deg);
+    }
+    75% {
+        transform: translateX(-6px) rotate(-1.2deg);
+    }
+}
+
+/** 
+* text autoscroll for "what-clints-say" slides
+*/
+
+//checkbox 1
+@keyframes one-time-autoscroller-checkbox1 {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-345%);
+    }    
+}
+@keyframes infinite-autoscroller-checkbox1 {
+    0% {
+        transform: translateX(155%); 
+    }
+    100% {
+        transform: translateX(-345%);
+    }    
+}
+
+// checkbox 2
+@keyframes one-time-autoscroller-checkbox2 {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-225%);
+    }    
+}
+@keyframes infinite-autoscroller-checkbox2 {
+    0% {
+        transform: translateX(225%); 
+    }
+    100% {
+        transform: translateX(-225%);
+    }    
+}
+
+// checkbox 3
+@keyframes one-time-autoscroller-checkbox3 {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }    
+}
+@keyframes infinite-autoscroller-checkbox3 {
+    0% {
+        transform: translateX(335%); 
+    }
+    100% {
+        transform: translateX(-100%);
+    }    
+}
+
+/** 
+* text animation for "what-clints-say" slides
+*/
+
+@keyframes text-vertical-moving {
+    0%, 50%  {
+        margin-top: -20%;
+    }
+    100% {
+        margin-top: 0%;
+    }   
+}
+
+
+@keyframes text-vertical-moving-Desktop {
+    0%, 50%  {
+        margin-top: -12%;
+    }
+    100% {
+        margin-top: 0%;
+    }   
+}
+
+@keyframes text-grow {
+    0%, 50%  {
+        font-size: 50px;
+        padding-top: 7% ; 
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/** 
+* text dropdown && dropup for footer menu
+*/
+
+@keyframes dropdown {
+    100% {margin-top: -15px;}
+};
+
+@keyframes dropup {
+    0% {margin-top: 0;}
+    100% {margin-top: -200%;}
+};
+
+/** 
+* icons autoscroll for footer
+*/
+
+@keyframes infinite-icons-autoscroller { 
+    0% {
+        transform: translateX(135px);       
+    }
+    100% {
+        transform: translateX(-165px);
+    }
+}
+
+@keyframes infinite-icons-autoscroller2 { 
+    0% {
+        transform: translateX(30px);
+    }
+    100% {
+        transform: translateX(-270px);
+    }
+}

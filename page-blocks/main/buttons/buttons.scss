@@ -1,0 +1,82 @@
+@use '../../../commons';
+
+/** 
+* buttons
+* used for "best-for-you" and "enjoy-more" content blocks
+*/
+
+.buttons {
+    display: inline-block;
+    height: 60px;
+    width: 100%;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease 0s;
+
+    background-size: 100% 50%;
+
+    @include commons.for-tablet {
+        background-size: auto;
+    }
+
+    @include commons.for-desktop {
+        width: 180px;
+    }
+
+    &:active {
+        transform: scale(.9);
+        transition: transform 200ms;
+    }
+}
+
+.button-googleplay {
+    background-image: url('../img/best-for-you/googleplay-btn-content.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.button-appstore {
+    background-image: url('../img/best-for-you/appstore-btn-content.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.buttons-minidark {
+    display: inline-block;
+    height: 60px;
+
+    width: 100%;
+    background-size: 100% 55%; //backfall
+    background-size: 30vw;
+    
+    @include commons.for-tablet {
+        background-size: 100% 62%; //backfall
+        background-size: 15vw;
+    }
+    @include commons.for-desktop {
+        height: 50px;
+        width: 165px;
+        background-size: auto;
+    }
+
+    background-color: black;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease 0s;  
+
+    &:active {
+        transform: scale(.9);
+        transition: transform 200ms;
+    }
+}
+
+.button-googleplay-minidark {
+    background-image: url('../img/enjoy-more/googleplay-btn-content_transparent.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.button-appstore-minidark {
+    background-image: url('../img/best-for-you/appstore-btn-content.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}

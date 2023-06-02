@@ -1,0 +1,17 @@
+//** Common components
+
+//## Fontfaces, titles && paragraphs styles
+@forward 'typography'; 
+
+//## Only global variables (local variables => in each directory)
+@forward 'variables';  
+
+//## Global mixins : containers size, breakpoints, page border decoration
+@forward 'mixins';      
+
+//## Icons animations, autoscroll, dropdown menu
+@forward 'keyframes';  
+
+//## Slider checkbox functions for "what-clients-say" block
+@forward 'functions';
+

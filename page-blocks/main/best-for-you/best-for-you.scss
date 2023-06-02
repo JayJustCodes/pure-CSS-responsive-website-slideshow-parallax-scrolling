@@ -1,0 +1,90 @@
+@use '../../../commons';
+@use '../../header';
+
+/*-------------------------------------------*\
+
+"Best for you" block
+
+\*-------------------------------------------*/
+
+// height if Desktop 
+$desk-height-best-for-you: calc(100vh - header.$header-min-H); 
+
+
+//--------------------------------------
+.best-for-you {
+    padding: 15px 0px 10px 0px;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+        @include commons.blocks-paddings;
+        @include commons.blocks-size-desktop;
+        @include commons.blocks-size-L-screen;
+
+        @include commons.for-tablet {
+            flex-direction: row;
+            align-items: center;
+        }
+        @include commons.for-desktop {
+            height: $desk-height-best-for-you;
+        }  
+    }
+
+
+    &__content {
+        @include commons.for-tablet {
+            min-width: 55%;
+        }
+        @include commons.for-L-screen {
+            min-width: 67%;
+        }
+        
+        &-title {
+            line-height: 140%;
+        }
+
+        &-text {
+            line-height: 180%;
+            font-size: 1.2rem;
+            
+            @include commons.for-L-screen {
+                max-width: 870px; 
+                font-size: 1.4vw;
+            }
+        }
+    }
+
+
+    &__image {
+        margin-top: 25px;
+        align-self: center;
+
+        @include commons.for-tablet {
+            margin-top: 0px;
+            padding-left: 35px; 
+        }
+
+        img {
+            width: 100%;
+
+            @include commons.for-tablet {
+                width: auto;
+            }
+        }
+    }
+
+
+    &::after {
+        @include commons.rightside-border-decoration_blue;
+
+        margin-top: 20%;
+        z-index: -1;
+        
+        @include commons.for-tablet {
+            margin-top: 0;
+        }
+    } 
+}

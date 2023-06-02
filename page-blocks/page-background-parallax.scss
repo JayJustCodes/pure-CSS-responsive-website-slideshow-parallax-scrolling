@@ -1,0 +1,105 @@
+@use '../commons';
+
+/*-------------------------------------------*\
+
+Parallax effect for page background 
+
+\*-------------------------------------------*/
+
+.wrapper-background-parallax {
+    height: 100vh;
+    overflow-y: auto;
+    perspective: 1px;
+    transform-style: preserve-3d;
+}
+
+.background-parallax {
+    transform: translateZ(-1px) scale(2);
+    z-index: -2;
+
+    position: fixed;
+    min-width: 100%;
+
+    /*to cover the whole "main" block*/
+    min-height: 200%;
+    
+
+    @include commons.for-tablet {
+        min-height: 90%;
+    }
+
+    
+    @include commons.for-desktop {
+        min-height: 145%;
+    }
+    
+    /*to move down to center of page*/
+    top: 141%;
+
+    display: grid;
+    justify-content: center;
+
+    //-----------------------------------------------------------------------
+
+    &_top::after, 
+    
+    &_middle::before, 
+    &_middle::after, 
+
+    &_bottom::after {
+        content: "";
+        background-image: url("../img/back-decor.svg");
+        background-repeat: no-repeat;
+        background-size: 100%;
+
+        display: inline-block;
+        width: 154px;
+        height: 154px;
+
+        position: absolute;
+
+        opacity: 0.7;
+
+        @include commons.for-tablet {
+            opacity: 1;
+        }
+    }
+    //---------------------------------------------
+    @mixin translate-for-Desktop-Lscreen($translateX-desktop, $translateY, $translateX-L-screen){
+        @include commons.for-desktop {
+            position: static;
+            transform: translate($translateX-desktop, $translateY);
+        }
+        @include commons.for-L-screen {
+            transform: translate($translateX-L-screen, $translateY);
+        }
+    } 
+    &_top::after {
+        right: 0;
+        @include translate-for-Desktop-Lscreen(500px, 0px, 615px);
+    }
+    //--------------------
+    &_middle::before {
+        left: 0;
+        @include translate-for-Desktop-Lscreen(-375px, -40px, -420px);
+    }
+    &_middle::after {
+        right: 0;
+        bottom: 40%;
+        @include translate-for-Desktop-Lscreen(345px, 325px, 400px);
+    }
+    //--------------------
+    &_bottom::after {
+        right: 0;
+        bottom: 5%;
+
+        @include commons.for-desktop {
+            bottom: -15%;
+        }
+        @include commons.for-L-screen {
+            bottom: 0;
+        }
+    }
+}
+
+

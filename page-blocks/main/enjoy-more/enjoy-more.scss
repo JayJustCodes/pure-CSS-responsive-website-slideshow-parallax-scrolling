@@ -1,0 +1,89 @@
+@use '../../../commons';
+
+/*-------------------------------------------*\
+
+"Enjoy-more" block
+
+\*-------------------------------------------*/
+
+.enjoy-more {
+    position: relative;
+
+    &__container {
+        @include commons.blocks-paddings;
+        @include commons.blocks-size-desktop;
+        @include commons.blocks-size-L-screen;
+
+        padding-bottom: 120px;
+
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 50px;
+        
+        @include commons.for-tablet {
+            margin-top: 100px;
+            flex-direction: row;
+        }
+
+        @include commons.for-desktop {
+            gap: unset;
+        }
+    }
+    //-------------------------------------------------------------
+    &__image {
+
+        img {
+            width: 100%;
+
+            @include commons.for-desktop {
+                width: 132%;
+                max-width: 516px;
+
+                margin-left: -20%;
+            }
+        }
+    }
+
+    //-----------------------
+    &__content {
+        text-align: center;
+        align-items: center;
+        
+        @include commons.for-tablet {
+            width: 71%;
+        }
+        
+        &-text {
+            @include commons.for-tablet {
+                width: 83%;
+            }
+            @include commons.for-L-screen {
+                font-size: 1.1vw;
+                line-height: 150%;
+            }
+        }
+
+        &-buttons {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+    //-------------------------------------------------------------
+
+    &::before {
+        @include commons.leftside-border-decoration_blue;
+
+        bottom: -60px;
+        z-index: -1;
+    }
+    
+    &::after {
+        @include commons.rightside-border-decoration_gold;
+        
+        bottom: -82px;
+        z-index: -1;
+    }  
+}
+
