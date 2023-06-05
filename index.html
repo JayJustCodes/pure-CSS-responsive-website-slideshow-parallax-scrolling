@@ -40,9 +40,15 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet sed vulputate vitae velit dictum cursus amet. Turpis donec ut velit quis. Cursus commodo, eget urna, sapien amet.</p> 
                         </div>
                         <div class="inviting-to-download__buttons-container">  
-                            <a href="#" class="inviting-to-download__buttons buttons button-googleplay">
+                            <dialog class="modals modal-type1" id="dialog">
+                                <form method="dialog">
+                                    <h3>Are you sure you want to leave this page ?</h3>
+                                    <button class="buttons" value="cancel"><h3>Cancel</h3></button>
+                                </form>
+                            </dialog>
+                            <a href="#" class="inviting-to-download__buttons buttons button-googleplay" onclick="dialog.showModal()">
                             </a>
-                            <a href="#" class="inviting-to-download__buttons buttons button-appstore">
+                            <a href="#" class="inviting-to-download__buttons buttons button-appstore" onclick="dialog.showModal()">
                             </a>
                         </div>  
                     </div>
@@ -70,8 +76,12 @@
                                         <p class="paragraph-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                                     </div>    
                                     <div class="description-block__link">
-                                            <a href="#" class="description-block__hypertext">Learn more<img class="description-block__link-arrow" src="img/what-we-do/learn-more-link.svg" alt="learn more link"></a>
-                                    </div>
+                                            <input type="checkbox" class="modal-type2-checkbox"  id="modal-type2-checkbox1">
+                                            <label class="description-block__hypertext" for="modal-type2-checkbox1">Learn more<img class="description-block__link-arrow" src="img/what-we-do/learn-more-link.svg" alt="learn more link"></label>
+                                            <dialog class="modals modal-type2">
+                                                <p class="paragraph-text modal-type2__text"> <img class="modal-type2__image" src="img/what-we-do/we-send-icon1.svg" alt="pop-up image">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                            </dialog>
+                                    </div> 
                                 </div>
                             </div>
                         </div>
@@ -86,7 +96,11 @@
                                         <p class="paragraph-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                                     </div>    
                                     <div class="description-block__link">
-                                            <a href="#" class="description-block__hypertext">Learn more<img class="description-block__link-arrow" src="img/what-we-do/learn-more-link.svg" alt="learn more link"></a>
+                                        <input type="checkbox" class="modal-type2-checkbox"  id="modal-type2-checkbox2">
+                                        <label class="description-block__hypertext" for="modal-type2-checkbox2">Learn more<img class="description-block__link-arrow" src="img/what-we-do/learn-more-link.svg" alt="learn more link"></label>                              
+                                        <dialog class="modals modal-type2 modal-type2_middle">
+                                            <p class="paragraph-text modal-type2__text"><img class="modal-type2__image" src="img/what-we-do/we-send-icon2.svg" alt="pop-up image">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                        </dialog>
                                     </div>
                                 </div>
                             </div>    
@@ -102,7 +116,11 @@
                                         <p class="paragraph-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                                     </div>    
                                     <div class="description-block__link">
-                                            <a href="#" class="description-block__hypertext">Learn more<img class="description-block__link-arrow" src="img/what-we-do/learn-more-link.svg" alt="learn more link"></a>
+                                        <input type="checkbox" class="modal-type2-checkbox"  id="modal-type2-checkbox3">
+                                        <label class="description-block__hypertext" for="modal-type2-checkbox3">Learn more<img class="description-block__link-arrow" src="img/what-we-do/learn-more-link.svg" alt="learn more link"></label>
+                                        <dialog class="modals modal-type2">
+                                            <p class="paragraph-text modal-type2__text"><img class="modal-type2__image" src="img/what-we-do/we-send-icon3.svg" alt="pop-up image">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                        </dialog>
                                     </div>
                                 </div>
                             </div>
@@ -193,9 +211,6 @@
                             <label class="slider__arrow" for="checkbox-text1"></label>
                             <label class="slider__arrow" for="checkbox-text2"></label>
                             <label class="slider__arrow" for="checkbox-text3"></label>
-               
-
-                            <!-- <div class="slider__arrows_right"></div> -->
                         </div>
                     </div>
                 </div> 
@@ -209,15 +224,14 @@
                         <h3 class="enjoy-more__content-title inviting-to-download__title">Download app to enjoy more!</h3>
                         <div class="enjoy-more__content-text inviting-to-download__text paragraph-text">Amet in elementum nulla scelerisque dui, egestas at. Elit consectetur turpis elementum amet vitae et etiam nec. Varius volutpat hac adipiscing tincidunt pretium. </div>
                         <div class="enjoy-more__content-buttons inviting-to-download__buttons-container">  
-                            <a href="#" class="inviting-to-download__buttons buttons-minidark button-googleplay-minidark"></a>
-                            <a href="#" class="inviting-to-download__buttons buttons-minidark button-appstore-minidark"></a>
+                            <a href="#" class="inviting-to-download__buttons buttons-minidark button-googleplay-minidark" onclick="dialog.showModal()"></a>
+                            <a href="#" class="inviting-to-download__buttons buttons-minidark button-appstore-minidark" onclick="dialog.showModal()"></a>
                         </div>  
                     </div>
                 </div>
             </section>
         </main>
         <footer class="footer footer__inner">
-            <!-- <div class="footer__container"> -->
                 <div class="footer__navigation-bar navigation-bar">
                     <div class="navigation-bar__container">
                         <div class="navigation-bar__logo">

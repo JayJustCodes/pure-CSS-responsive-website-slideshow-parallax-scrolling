@@ -392,108 +392,34 @@ Images and text/autoscroll rules for checkboxes
 
 /*-------------------------------------------*\
 
-Parallax effect for page background 
+Pop-up type 1
 
 \*-------------------------------------------*/
-.wrapper-background-parallax {
-  height: 100vh;
-  overflow-y: auto;
-  perspective: 1px;
-  transform-style: preserve-3d;
+.modals {
+  transition: opacity 5s ease;
+  border: 1px solid #4A99D3;
+  border-radius: 5px;
 }
 
-.background-parallax {
-  transform: translateZ(-1px) scale(2);
-  z-index: -2;
-  position: fixed;
-  min-width: 100%;
-  /*to cover the whole "main" block*/
-  min-height: 200%;
-  /*to move down to center of page*/
-  top: 141%;
-  display: grid;
-  justify-content: center;
+.modal-type1 form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
-@media (min-width: 640px) {
-  .background-parallax {
-    min-height: 90%;
-  }
+.modal-type1 button {
+  background-color: #4A99D3;
+  color: #fff;
+  border: 0;
 }
-@media (min-width: 1024px) {
-  .background-parallax {
-    min-height: 145%;
-  }
+.modal-type1 button h3 {
+  margin: 0;
 }
-.background-parallax_top::after, .background-parallax_middle::before, .background-parallax_middle::after, .background-parallax_bottom::after {
-  content: "";
-  background-image: url("../img/back-decor.svg");
-  background-repeat: no-repeat;
-  background-size: 100%;
-  display: inline-block;
-  width: 154px;
-  height: 154px;
-  position: absolute;
-  opacity: 0.7;
+.modal-type1::backdrop {
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
 }
-@media (min-width: 640px) {
-  .background-parallax_top::after, .background-parallax_middle::before, .background-parallax_middle::after, .background-parallax_bottom::after {
-    opacity: 1;
-  }
-}
-.background-parallax_top::after {
-  right: 0;
-}
-@media (min-width: 1024px) {
-  .background-parallax_top::after {
-    position: static;
-    transform: translate(500px, 0px);
-  }
-}
-@media (min-width: 1440px) {
-  .background-parallax_top::after {
-    transform: translate(615px, 0px);
-  }
-}
-.background-parallax_middle::before {
-  left: 0;
-}
-@media (min-width: 1024px) {
-  .background-parallax_middle::before {
-    position: static;
-    transform: translate(-375px, -40px);
-  }
-}
-@media (min-width: 1440px) {
-  .background-parallax_middle::before {
-    transform: translate(-420px, -40px);
-  }
-}
-.background-parallax_middle::after {
-  right: 0;
-  bottom: 40%;
-}
-@media (min-width: 1024px) {
-  .background-parallax_middle::after {
-    position: static;
-    transform: translate(345px, 325px);
-  }
-}
-@media (min-width: 1440px) {
-  .background-parallax_middle::after {
-    transform: translate(400px, 325px);
-  }
-}
-.background-parallax_bottom::after {
-  right: 0;
-  bottom: 5%;
-}
-@media (min-width: 1024px) {
-  .background-parallax_bottom::after {
-    bottom: -15%;
-  }
-}
-@media (min-width: 1440px) {
-  .background-parallax_bottom::after {
-    bottom: 0;
-  }
+.modal-type1[open] {
+  animation-name: animate-top;
+  animation-duration: 0.4s;
 }

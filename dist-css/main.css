@@ -114,6 +114,7 @@ Index
 - Text animation for "what-clints-say" slides
 - Text dropdown && dropup for footer menu
 - Icons autoscroll for footer
+- Pop-ups animation
 
 \*-------------------------------------------*/
 /** 
@@ -128,6 +129,17 @@ Index
   }
   100% {
     transform: scale(1);
+  }
+}
+@keyframes modal-arrow {
+  0% {
+    transform: scale(1.5) rotate(268deg);
+  }
+  50% {
+    transform: scale(1.3) rotate(268deg);
+  }
+  100% {
+    transform: scale(1.5) rotate(268deg);
   }
 }
 @keyframes logo-sway {
@@ -263,6 +275,19 @@ Index
   }
   100% {
     transform: translateX(-270px);
+  }
+}
+/** 
+* pop'us animation
+*/
+@keyframes animate-top {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
   }
 }
 /*-------------------------------------------*\
@@ -761,6 +786,7 @@ Index
 .description-block__info {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 .description-block__title {
   font-weight: 500;
@@ -1453,6 +1479,72 @@ Index
   background-image: url("../img/best-for-you/appstore-btn-content.svg");
   background-repeat: no-repeat;
   background-position: center;
+}
+
+/*-------------------------------------------*\
+
+Pop-up type 1
+
+\*-------------------------------------------*/
+.modals {
+  transition: opacity 5s ease;
+  border: 1px solid #4A99D3;
+  border-radius: 5px;
+}
+
+.modal-type1 form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.modal-type1 button {
+  background-color: #4A99D3;
+  color: #fff;
+  border: 0;
+}
+.modal-type1 button h3 {
+  margin: 0;
+}
+.modal-type1::backdrop {
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+.modal-type1[open] {
+  animation-name: animate-top;
+  animation-duration: 0.4s;
+}
+
+/*-------------------------------------------*\
+
+Pop-up type 2
+
+\*-------------------------------------------*/
+.modal-type2-checkbox {
+  display: none;
+}
+
+.modal-type2-checkbox:checked ~ .modal-type2 {
+  display: block;
+  height: 75%;
+  width: 60%;
+  left: 80px;
+  bottom: 30px;
+  text-align: center;
+  overflow: auto;
+}
+.modal-type2-checkbox:checked ~ .modal-type2::-webkit-scrollbar {
+  width: 10px;
+  background-color: #4A99D3;
+}
+.modal-type2-checkbox:checked ~ .modal-type2::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #4A99D3;
+  border: 2px solid #260041;
+}
+
+.modal-type2-checkbox:checked ~ .description-block__hypertext img {
+  animation: modal-arrow 1s ease-in-out infinite both;
 }
 
 /*-------------------------------------------*\

@@ -1,0 +1,59 @@
+@use '../../../commons';
+/*-------------------------------------------*\
+
+Pop-up type 2
+
+\*-------------------------------------------*/
+
+.modal-type2 {
+    &-checkbox {
+        display: none;
+    }
+
+    &__text, &__image {
+        display: block;
+        margin: 0 auto;
+    }
+}
+ 
+.modal-type2-checkbox:checked { 
+    
+    & ~ .modal-type2 {
+            display: block;
+
+
+            height: 75%;
+            width: 60%;
+            left: 80px;
+            bottom: 30px;
+
+            text-align: center;
+            overflow: auto;
+
+            &::-webkit-scrollbar {
+                width: 10px;
+                background-color: commons.$base-color-light;
+
+                &-thumb {
+                    border-radius: 10px;
+                    background-color: commons.$base-color-light;
+                    border: 2px solid commons.$base-text-color;
+                }
+            }
+    }  
+
+    & ~ .description-block__hypertext .description-block__link-arrow { 
+        animation: modal-arrow 1s ease-in-out infinite both;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

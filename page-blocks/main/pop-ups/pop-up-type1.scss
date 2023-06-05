@@ -1,0 +1,45 @@
+@use '../../../commons';
+
+/*-------------------------------------------*\
+
+Pop-up type 1
+
+\*-------------------------------------------*/
+
+.modals {
+    transition: opacity 5s ease;
+    border: 1px solid commons.$base-color-light;
+    border-radius: 5px;
+}
+
+
+.modal-type1 {
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    button {
+        background-color: #4A99D3;
+        color: #fff;
+        border: 0;
+        
+        
+        h3 {
+            margin: 0;
+        }
+    }
+
+    &::backdrop {
+        backdrop-filter: blur(5px);
+    }
+
+    &[open] {
+        animation-name: animate-top;
+        animation-duration: 0.4s;
+    }    
+}
+
