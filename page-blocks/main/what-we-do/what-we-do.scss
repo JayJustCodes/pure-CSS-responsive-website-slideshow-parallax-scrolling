@@ -85,6 +85,13 @@ $we-buy-logo-width: 59%;
         }   
     }
 
+    &::before {
+        @include commons.rightside-border-decoration_blue;
+
+        transform: translateY(-75%);
+        z-index: -1;
+    } 
+
 
     &::after {
         @include commons.leftside-border-decoration_gold;
@@ -139,9 +146,6 @@ $we-buy-logo-width: 59%;
         letter-spacing: 0.02em;
         color: commons.$title-color-dark;
         padding-bottom: 16px;
-    }
-    &__text {
-        height: 103px;
     }
 
     &__link {

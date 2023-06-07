@@ -500,7 +500,7 @@ Index
   position: relative;
   overflow: hidden;
   padding-top: 10px;
-  height: 220px;
+  min-height: 220px;
   min-width: 265px;
   z-index: 3;
 }

@@ -458,7 +458,7 @@ Index
   display: grid;
   grid-template-columns: 1fr;
   position: absolute;
-  height: 100%;
+  min-height: 100%;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -479,7 +479,6 @@ Index
 }
 .navigation-bar__menu li {
   overflow: hidden;
-  max-height: 120%;
 }
 .navigation-bar__menu-title {
   color: #FFFFFF;
@@ -520,12 +519,13 @@ Index
 }
 .navigation-bar__subscribe {
   grid-area: subscribe;
-  height: 122px;
   width: 60%;
   padding-bottom: 50px;
   display: grid;
   grid-template-areas: "label label" "input button";
   grid-template-columns: 66.502% 126px;
+  align-content: center;
+  align-self: start;
 }
 @media (min-width: 640px) {
   .navigation-bar__subscribe {
@@ -548,7 +548,6 @@ Index
 .subscribe__input {
   grid-area: input;
   display: inline-block;
-  height: 48px;
   border-radius: 3px;
   outline: 0;
   border: 0;
@@ -663,7 +662,7 @@ Index
 */
 .bottom-bar__container {
   position: relative;
-  height: 57px;
+  min-height: 57px;
   display: flex;
   justify-content: space-between;
   align-items: center;

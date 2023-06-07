@@ -466,6 +466,35 @@ Index
     grid-area: buy;
   }
 }
+.what-we-do::before {
+  content: "";
+  background-size: 150px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  position: absolute;
+  width: 150px;
+  height: 160px;
+  opacity: 0.5;
+  background-image: url(../img/right-decor1.svg);
+  right: 0;
+  transform: translateY(-75%);
+  z-index: -1;
+}
+@media (min-width: 640px) {
+  .what-we-do::before {
+    background-size: 170px;
+    width: 170px;
+    height: 180px;
+    opacity: 1;
+  }
+}
+@media (min-width: 1024px) {
+  .what-we-do::before {
+    background-size: 200px;
+    width: 200px;
+    height: 210px;
+  }
+}
 .what-we-do::after {
   content: "";
   background-size: 150px;
@@ -533,9 +562,6 @@ Index
   letter-spacing: 0.02em;
   color: #0F001A;
   padding-bottom: 16px;
-}
-.description-block__text {
-  height: 103px;
 }
 .description-block__link {
   margin-top: 70px;

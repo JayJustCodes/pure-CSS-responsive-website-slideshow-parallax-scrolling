@@ -426,17 +426,19 @@ Images and text/autoscroll rules for checkboxes
 @media (min-width: 1024px) {
   .enjoy-more__container {
     gap: unset;
+    transform: translateX(-8%);
+  }
+}
+.enjoy-more__image {
+  min-width: 38%;
+}
+@media (min-width: 1024px) {
+  .enjoy-more__image {
+    min-width: 522px;
   }
 }
 .enjoy-more__image img {
   width: 100%;
-}
-@media (min-width: 1024px) {
-  .enjoy-more__image img {
-    width: 132%;
-    max-width: 516px;
-    margin-left: -20%;
-  }
 }
 .enjoy-more__content {
   text-align: center;
@@ -444,7 +446,7 @@ Images and text/autoscroll rules for checkboxes
 }
 @media (min-width: 640px) {
   .enjoy-more__content {
-    width: 71%;
+    min-width: 56%;
   }
 }
 @media (min-width: 640px) {

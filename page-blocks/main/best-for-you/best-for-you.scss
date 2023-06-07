@@ -1,5 +1,4 @@
 @use '../../../commons';
-@use '../../header';
 
 /*-------------------------------------------*\
 
@@ -7,8 +6,8 @@
 
 \*-------------------------------------------*/
 
-// height if Desktop 
-$desk-height-best-for-you: calc(100vh - header.$header-min-H); 
+// // height if Desktop 
+// $desk-height-best-for-you: calc(100vh - header.$header-min-H); 
 
 
 //--------------------------------------
@@ -28,9 +27,10 @@ $desk-height-best-for-you: calc(100vh - header.$header-min-H);
             flex-direction: row;
             align-items: center;
         }
-        @include commons.for-desktop {
-            height: $desk-height-best-for-you;
-        }  
+
+        &_fullscreen {
+            min-height: 80vh;
+        }
     }
 
 
@@ -75,16 +75,4 @@ $desk-height-best-for-you: calc(100vh - header.$header-min-H);
             }
         }
     }
-
-
-    &::after {
-        @include commons.rightside-border-decoration_blue;
-
-        margin-top: 20%;
-        z-index: -1;
-        
-        @include commons.for-tablet {
-            margin-top: 0;
-        }
-    } 
 }

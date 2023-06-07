@@ -28,20 +28,22 @@
 
         @include commons.for-desktop {
             gap: unset;
+
+            transform: translateX(-8%); //off?
         }
     }
     //-------------------------------------------------------------
     &__image {
+        
+        min-width: 38%;
+
+        @include commons.for-desktop {
+            min-width: 522px; 
+        }
+        
 
         img {
             width: 100%;
-
-            @include commons.for-desktop {
-                width: 132%;
-                max-width: 516px;
-
-                margin-left: -20%;
-            }
         }
     }
 
@@ -51,7 +53,7 @@
         align-items: center;
         
         @include commons.for-tablet {
-            width: 71%;
+            min-width: 56%;               
         }
         
         &-text {
