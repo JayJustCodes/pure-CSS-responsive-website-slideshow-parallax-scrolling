@@ -1,4 +1,4 @@
-# :link: [Responsive web site]([https://jays-v.github.io/responsive-website](https://jays-v.github.io/pure-CSS-responsive-website-slideshow-parallax-scrolling/)) 
+# :link: [Responsive web site]([https://jays-v.github.io/responsive-website](https://jays-v.github.io/pure-CSS-responsive-website-slideshow-parallax-scrolling/) 
 ![Repo Size](https://img.shields.io/github/repo-size/JayS-v/responsive-website)
 
 
